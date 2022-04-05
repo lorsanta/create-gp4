@@ -34,7 +34,8 @@ type Rootdir struct {
 // check if slice contains specified string
 func contains(s []string, e string) bool {
 	for _, a := range s {
-		if strings.Contains(a, e) {
+		matched, _ := filepath.Match(a, e)
+		if(matched) {
 			return true
 		}
 	}
